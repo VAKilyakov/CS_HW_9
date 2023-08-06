@@ -38,3 +38,44 @@ PS D:\Home_Works\CS_HW_9> dotnet run
 N=8 -> '8, 7, 6, 5, 4, 3, 2, 1'
 */
 
+/* Задача 2: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+M = 1; N = 15 -> 120
+M = 4; N = 8. -> 30
+*/
+
+/* Решение 2
+int InputIntNum(string message) //ввод целочисленных чисел
+{
+    Console.Write(message + " ");
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+int Summ(int M, int N)
+{
+     if (M == N)
+     {
+        return N;
+     }
+     else
+     {
+        return M + Summ(M + 1,N);
+     }
+
+}
+
+int M = InputIntNum("Введите стартовое число: ");
+int N = InputIntNum("Введите конечное число: ");
+Console.Write("M="+ M + "; N=" + N + " -> ");
+Console.Write(Summ(M, N));
+*/
+
+/* Тест 2
+PS D:\Home_Works\CS_HW_9> dotnet run
+Введите стартовое число:  1
+Введите конечное число:  15
+M=1; N=15 -> 120
+PS D:\Home_Works\CS_HW_9> dotnet run
+Введите стартовое число:  4
+Введите конечное число:  8
+M=4; N=8 -> 30
+*/
