@@ -79,3 +79,49 @@ PS D:\Home_Works\CS_HW_9> dotnet run
 Введите конечное число:  8
 M=4; N=8 -> 30
 */
+
+/* Задача 3: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+m = 2, n = 3 -> A(m,n) = 9
+m = 3, n = 2 -> A(m,n) = 29
+*/
+
+/* Решение 3
+int InputIntNum(string message) //ввод целочисленных чисел
+{
+    Console.Write(message + " ");
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+int Akkerman(int M, int N)
+{
+    if (M == 0) 
+    {
+        return N + 1;
+    }
+    else if (N == 0) 
+    {
+        return Akkerman(M - 1, 1);
+    }
+    else 
+    {
+        return Akkerman(M - 1, Akkerman(M, N - 1));
+    }
+}
+
+
+int M = InputIntNum("Введите значение M: ");
+int N = InputIntNum("Введите значение N: ");
+
+Console.Write($"Функция Аккермана равно {Akkerman(M, N)} ");
+*/
+
+/* Тест 3
+PS D:\Home_Works\CS_HW_9> dotnet run
+Введите значение M:  2
+Введите значение N:  3
+Функция Аккермана равно 9 
+PS D:\Home_Works\CS_HW_9> dotnet run
+Введите значение M:  3
+Введите значение N:  2
+Функция Аккермана равно 29 
+*/
